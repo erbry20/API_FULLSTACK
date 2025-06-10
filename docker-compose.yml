@@ -1,0 +1,30 @@
+
+
+version: "3.8"
+
+services:
+  client:
+    build: ./Client
+    ports:
+      - "8080:80"     # o cualquier otro puerto libre, por ejemplo 8080:80
+    restart: unless-stopped
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  server:
+    build: ./Server
+    ports:
+      - "3000:3000"
+    env_file: .env
+    environment:
+      NODE_ENV: development
+      DB_URL: ${BD_URL}
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

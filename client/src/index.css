@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+body{
+    background-color: #f3f4f6;
+    border-radius: 8px;
+}
