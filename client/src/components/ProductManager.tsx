@@ -1,7 +1,7 @@
 // src/components/ProductManager.tsx
 import { useState, useEffect } from "react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api/products";
+const API_URL = import.meta.env.VITE_API_URL || "https://server-7gwr.onrender.com/api/products";
 
 interface Product {
   id?: number;
